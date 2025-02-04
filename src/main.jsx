@@ -36,7 +36,7 @@ const App = () => {
       <BrowserRouter>
         <Header user={user} onLogout={handleLogout} />
         <Routes>
-          <Route path="/" element={<Auth onLogin={handleLogin} />} />
+          <Route path="/login" element={<Auth onLogin={handleLogin} />} />
           <Route
             path="/create"
             element={
@@ -69,14 +69,7 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/check"
-            element={
-              <ProtectedRoute user={user}>
-                <CheckReceipt />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/" element={<CheckReceipt />} />
           <Route path="*" element={<h1>404: Page Not Found</h1>} />
         </Routes>
       </BrowserRouter>
